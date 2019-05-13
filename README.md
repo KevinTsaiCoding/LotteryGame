@@ -1,2 +1,2 @@
 # LotteryGame
-This is the first small project which I wrote in freshman with my partner.
+This Is The First Small Project Which I Wrote In Freshman With My Partner.
