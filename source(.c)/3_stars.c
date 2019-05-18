@@ -4,9 +4,9 @@
 #define N 4
 
 
-void best(void);/* æ­£å½© */
-void worse(void);/* çµ„å½© */
-void worst(void);/* å°å½© */
+void best(void);/* ¥¿±m */
+void worse(void);/* ²Õ±m */
+void worst(void);/* ¹ï±m */
 
 char stars_num[N];
 char player_num[N];	
@@ -28,9 +28,9 @@ void stars(void)
 	printf("%c%c%c%c\n",stars_num[0],stars_num[1],stars_num[2],stars_num[3]);
 	
 	puts("Welcome and Play 3 STARS, choice the option you want to play");
-	puts("1. æ­£å½©");
-	puts("2. çµ„å½©");
-	puts("3. å°å½©");
+	puts("1. ¥¿±m");
+	puts("2. ²Õ±m");
+	puts("3. ¹ï±m");
 	printf("> ");
 	int op;
 	scanf("%d",&op);
@@ -57,11 +57,11 @@ void stars(void)
 void best(void)
 {
 	fflush(stdin);
-	puts("é¸å€‹ä¸‰ä½æ•¸: ");
+	puts("¿ï­Ó¤T¦ì¼Æ: ");
 	gets(player_num);
 	
 	int bet;
-	printf("æ‚¨ä¸‹æ³¨æ•¸ç›®(æ¯æ³¨25å…ƒ): ");
+	printf("±z¤Uª`¼Æ¥Ø(¨Cª`25¤¸): ");
 	scanf("%d",&bet);	
 	
 	int i,j;
@@ -80,128 +80,128 @@ void best(void)
 	}
 	
 	system("cls");
-	printf("é–‹çä¸­...\n");
+	printf("¶}¼ú¤¤...\n");
 	sleep(2);
 	system("cls");
 	
 	for(i=0;i<N-1;i++){
 		if(stars_num[i]=='0'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='1'){
-			printf("\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n\n");
+			printf("\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='2'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='3'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);	
 		}	
 		if(stars_num[i]=='4'){
-			printf("\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='5'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='6'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='7'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='8'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='9'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		system("cls");
 	}
 	if(a==3){
-		printf("æ­å–œç²å¾—æ­£å½©, æ‚¨ç²å¾—%då…ƒ\n",bet*25*500);
+		printf("®¥³ßÀò±o¥¿±m, ±zÀò±o%d¤¸\n",bet*25*500);
 	}
 	else
-		printf("æ‚¨ç²å¾—0å…ƒ\n",bet);	
+		printf("±zÀò±o0¤¸\n",bet);	
 }
 void worse(void)
 {
 	fflush(stdin);
-	puts("é¸å€‹ä¸‰ä½æ•¸: ");
+	puts("¿ï­Ó¤T¦ì¼Æ: ");
 	gets(player_num);
 	
 	int bet;
-	printf("æ‚¨ä¸‹æ³¨æ•¸ç›®(æ¯æ³¨25å…ƒ): ");
+	printf("±z¤Uª`¼Æ¥Ø(¨Cª`25¤¸): ");
 	scanf("%d",&bet);	
 	
 	int i,j;
@@ -218,119 +218,119 @@ void worse(void)
 			}
 		}
 	}
-	printf("è«‹å•è¦ç©""3çµ„å½©""é‚„æ˜¯""6çµ„å½©""\n"); 
-	puts("1. 3çµ„å½©");
-	puts("2. 6çµ„å½©");
+	printf("½Ğ°İ­nª±""3²Õ±m""ÁÙ¬O""6²Õ±m""\n"); 
+	puts("1. 3²Õ±m");
+	puts("2. 6²Õ±m");
 	printf("> ");
 	int choose;
 	scanf("%d",&choose);
 	system("pause");
 	
 	system("cls");
-	printf("é–‹çä¸­...\n");
+	printf("¶}¼ú¤¤...\n");
 	sleep(2);
 	system("cls");
 	
 	for(i=0;i<N-1;i++){
 		if(stars_num[i]=='0'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='1'){
-			printf("\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n\n");
+			printf("\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='2'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='3'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);	
 		}	
 		if(stars_num[i]=='4'){
-			printf("\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='5'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='6'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='7'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='8'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='9'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		system("cls");
@@ -341,11 +341,11 @@ void worse(void)
 void worst(void)
 {
 	fflush(stdin);
-	puts("é¸å€‹ä¸‰ä½æ•¸: ");
+	puts("¿ï­Ó¤T¦ì¼Æ: ");
 	gets(player_num);
 	
 	int bet;
-	printf("æ‚¨ä¸‹æ³¨æ•¸ç›®(æ¯æ³¨25å…ƒ): ");
+	printf("±z¤Uª`¼Æ¥Ø(¨Cª`25¤¸): ");
 	scanf("%d",&bet);	
 	
 	int i,j;
@@ -363,119 +363,119 @@ void worst(void)
 	
 	
 	system("cls");
-	printf("é–‹çä¸­...\n");
+	printf("¶}¼ú¤¤...\n");
 	sleep(2);
 	system("cls");
 	
 	for(i=0;i<N-1;i++){
 		if(stars_num[i]=='0'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='1'){
-			printf("\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– \n\n");
+			printf("\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='2'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}	
 		if(stars_num[i]=='3'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);	
 		}	
 		if(stars_num[i]=='4'){
-			printf("\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='5'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='6'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ– \n"
-				   "\tâ– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½\n"
+				   "\t¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='7'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='8'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		if(stars_num[i]=='9'){
-			printf("\tâ– â– â– â– â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ–       â– \n"
-				   "\tâ– â– â– â– â– \n"
-				   "\t        â– \n"
-				   "\t        â– \n"
-				   "\tâ– â– â– â– â– \n\n");
+			printf("\t¡½¡½¡½¡½¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½      ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n"
+				   "\t        ¡½\n"
+				   "\t        ¡½\n"
+				   "\t¡½¡½¡½¡½¡½\n\n");
 			sleep(1);
 		}
 		system("cls");
 	}
 	if(a==2||b==2){
-		printf("æ­å–œç²å¾—æ­£å½©, æ‚¨ç²å¾—%då…ƒ\n",bet*25*30);
+		printf("®¥³ßÀò±o¥¿±m, ±zÀò±o%d¤¸\n",bet*25*30);
 	}
 	else
-		printf("æ‚¨ç²å¾—0å…ƒ\n",bet);	
+		printf("±zÀò±o0¤¸\n",bet);	
 		
 }
 	
