@@ -1,21 +1,16 @@
 #include<stdio.h>
 #include<time.h>
-#include<dos.h>
 #define N 4
-
-
-void best(void);/* •ø±m */
-void worse(void);/* ≤’±m */
-void worst(void);/* πÔ±m */
-
+void best(void);/* Ê≠£ÂΩ© */
+void worse(void);/* ÁµÑÂΩ© */
+void worst(void);/* Â∞çÂΩ© */
 char stars_num[N];
 char player_num[N];	
-
+int i,j,a=0,b=0,choice,random;
 void stars(void)
 {
+	srand(time(NULL));
 	system("cls");
-	
-	int i,j;
 	for(i=0;i<N-1;i++){
 		stars_num[i]=rand()%10+48; // generate ASCII code 0~9
 		for(j=0;j<i;j++){
@@ -24,13 +19,11 @@ void stars(void)
 			}
 		}
 	}
-	
 	printf("%c%c%c%c\n",stars_num[0],stars_num[1],stars_num[2],stars_num[3]);
-	
-	puts("Welcome and Play 3 STARS, choice the option you want to play");
-	puts("1. •ø±m");
-	puts("2. ≤’±m");
-	puts("3. πÔ±m");
+	puts("Ê≠°ËøéÊ∏∏ÂÆå‰∏âÊòüÂΩ©, Ë´ãÈÅ∏ÊìáÊÇ®Ë¶ÅÁé©ÁöÑÊ®°Âºè");
+	puts("1. Ê≠£ÂΩ©");
+	puts("2. ÁµÑÂΩ©");
+	puts("3. Â∞çÂΩ©");
 	printf("> ");
 	int op;
 	scanf("%d",&op);
@@ -50,432 +43,192 @@ void stars(void)
 			puts("No Support");
 			break;
 	}
-	
-	
-	
 }
 void best(void)
 {
 	fflush(stdin);
-	puts("øÔ≠”§T¶Ïº∆: ");
-	gets(player_num);
-	
+	puts("ÈÅ∏ÂÄã‰∏â‰ΩçÊï∏: ");
+	printf("1.ÈõªËÖ¶ÈÅ∏Ëôü\n2.Áé©ÂÆ∂ÈÅ∏Ëôü\n> ");
+	scanf("%d",&choice);
+	if(choice==2){
+		fflush(stdin);
+		printf("Áé©ÂÆ∂ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		gets(player_num);
+	}
+	else if(choice==1){
+		 printf("ÈõªËÖ¶ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		for(random=0;random<N-1;random++){
+			player_num[random]=rand()%10+48;
+			printf("%c",player_num[random]);
+		}	
+	}
+	puts("");
 	int bet;
-	printf("±z§U™`º∆•ÿ(®C™`25§∏): ");
+	printf("ÊÇ®‰∏ãÊ≥®Êï∏ÁõÆ(ÊØèÊ≥®25ÂÖÉ): ");
 	scanf("%d",&bet);	
-	
 	int i,j;
 	int a=0,b=0;
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]==player_num[i]){
+		if(stars_num[i]==player_num[i])
 			a++;
-		}
 		else{
-			for(j=0;j<N-1;j++){
-				if(stars_num[i]==player_num[j]){
+			for(j=0;j<N-1;j++)
+				if(stars_num[i]==player_num[j])
 					b++;
-				}
-			}
 		}
 	}
-	
 	system("cls");
-	printf("∂}º˙§§...\n");
+	printf("ÈñãÁçé‰∏≠...\n");
 	sleep(2);
 	system("cls");
-	
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]=='0'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='1'){
-			printf("\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='2'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='3'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);	
-		}	
-		if(stars_num[i]=='4'){
-			printf("\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='5'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='6'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='7'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='8'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='9'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
+		if(stars_num[i]=='0')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n\n");
+		if(stars_num[i]=='1')
+			printf("\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\n");
+		if(stars_num[i]=='2')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='3')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");	
+		if(stars_num[i]=='4')
+			printf("\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='5')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='6')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='7')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='8')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='9')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		sleep(1);
 		system("cls");
 	}
-	if(a==3){
-		printf("Æ•≥ﬂ¿Ú±o•ø±m, ±z¿Ú±o%d§∏\n",bet*25*500);
-	}
-	else
-		printf("±z¿Ú±o0§∏\n",bet);	
+	(a==3)?printf("ÊÅ≠ÂñúÁç≤ÂæóÊ≠£ÂΩ©, ÊÇ®Áç≤Âæó%dÂÖÉ\n",bet*25*500):printf("ÊÇ®Áç≤Âæó0ÂÖÉ\n",bet);	
 }
+
 void worse(void)
 {
+	puts("ÈÅ∏ÂÄã‰∏â‰ΩçÊï∏: ");
 	fflush(stdin);
-	puts("øÔ≠”§T¶Ïº∆: ");
-	gets(player_num);
-	
+	printf("1.ÈõªËÖ¶ÈÅ∏Ëôü\n2.Áé©ÂÆ∂ÈÅ∏Ëôü\n> ");
+	scanf("%d",&choice);
+	if(choice==2){
+		fflush(stdin);
+		printf("Áé©ÂÆ∂ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		gets(player_num);
+	}
+	else if(choice==1){
+		 printf("ÈõªËÖ¶ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		for(random=0;random<N-1;random++){
+			player_num[random]=rand()%10+48;
+			printf("%c",player_num[random]);
+		}	
+	}
+	puts("");
 	int bet;
-	printf("±z§U™`º∆•ÿ(®C™`25§∏): ");
-	scanf("%d",&bet);	
-	
+	printf("ÊÇ®‰∏ãÊ≥®Êï∏ÁõÆ(ÊØèÊ≥®25ÂÖÉ): ");
+	scanf("%d",&bet);
 	int i,j;
-	int a=0,b=0;
+	int a=0,b=0,three=0;
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]==player_num[i]){
+		if(stars_num[i]==stars_num[i-1])
+			three++;
+		if(stars_num[i]==player_num[i])
 			a++;
-		}
 		else{
-			for(j=0;j<N-1;j++){
-				if(stars_num[i]==player_num[j]){
+			for(j=0;j<N-1;j++)
+				if(stars_num[i]==player_num[j])
 					b++;
-				}
-			}
 		}
 	}
-	printf("Ω–∞›≠n™±""3≤’±m""¡Ÿ¨O""6≤’±m""\n"); 
-	puts("1. 3≤’±m");
-	puts("2. 6≤’±m");
-	printf("> ");
-	int choose;
-	scanf("%d",&choose);
-	system("pause");
-	
 	system("cls");
-	printf("∂}º˙§§...\n");
+	printf("ÈñãÁçé‰∏≠...\n");
 	sleep(2);
 	system("cls");
-	
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]=='0'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='1'){
-			printf("\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='2'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='3'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);	
-		}	
-		if(stars_num[i]=='4'){
-			printf("\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='5'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='6'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='7'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='8'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='9'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
+		if(stars_num[i]=='0')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n\n");
+		if(stars_num[i]=='1')
+			printf("\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\n");
+		if(stars_num[i]=='2')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='3')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");	
+		if(stars_num[i]=='4')
+			printf("\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='5')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='6')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='7')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='8')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='9')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		sleep(1);
 		system("cls");
 	}
-	/****************************'
-	*******************************/ 
+	printf("ÊÅ≠ÂñúÁç≤ÂæóÊ≠£ÂΩ©, ÊÇ®Áç≤Âæó%dÂÖÉ\n",bet*25*80);
+	/* ÈÄôÈÇäÈúÄ‰øÆÊîπ */
 }
 void worst(void)
 {
+	puts("ÈÅ∏ÂÄã‰∏â‰ΩçÊï∏: ");
 	fflush(stdin);
-	puts("øÔ≠”§T¶Ïº∆: ");
-	gets(player_num);
-	
+	printf("1.ÈõªËÖ¶ÈÅ∏Ëôü\n2.Áé©ÂÆ∂ÈÅ∏Ëôü\n> ");
+	scanf("%d",&choice);
+	if(choice==2){
+		fflush(stdin);
+		printf("Áé©ÂÆ∂ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		gets(player_num);
+	}
+	else if(choice==1){
+		 printf("ÈõªËÖ¶ÈÅ∏ÊìáËôüÁ¢ºÁÇ∫\n> ");
+		for(random=0;random<N-1;random++){
+			player_num[random]=rand()%10+48;
+			printf("%c",player_num[random]);
+		}	
+	}
+	puts("");
 	int bet;
-	printf("±z§U™`º∆•ÿ(®C™`25§∏): ");
-	scanf("%d",&bet);	
-	
-	int i,j;
-	int a=0,b=0;
-	for(i=0;i<2;i++){
-		if(stars_num[i]==player_num[i]){
+	printf("ÊÇ®‰∏ãÊ≥®Êï∏ÁõÆ(ÊØèÊ≥®25ÂÖÉ): ");
+	scanf("%d",&bet);
+	for(i=0;i<2;i++)
+		if(stars_num[i]==player_num[i])
 			a++;
-		}
-	}
-	for(j=1;j<3;j++){
-		if(stars_num[j]==player_num[j]){
+	for(j=1;j<3;j++)
+		if(stars_num[j]==player_num[j])
 			b++;
-		}
-	}
-	
-	
 	system("cls");
-	printf("∂}º˙§§...\n");
+	printf("ÈñãÁçé‰∏≠...\n");
 	sleep(2);
 	system("cls");
-	
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]=='0'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='1'){
-			printf("\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='2'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}	
-		if(stars_num[i]=='3'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);	
-		}	
-		if(stars_num[i]=='4'){
-			printf("\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='5'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='6'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='7'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='8'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
-		if(stars_num[i]=='9'){
-			printf("\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω      °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n"
-				   "\t        °Ω\n"
-				   "\t        °Ω\n"
-				   "\t°Ω°Ω°Ω°Ω°Ω\n\n");
-			sleep(1);
-		}
+		if(stars_num[i]=='0')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n\n");
+		if(stars_num[i]=='1')
+			printf("\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†\n\n");
+		if(stars_num[i]=='2')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='3')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");	
+		if(stars_num[i]=='4')
+			printf("\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='5')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='6')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†\n\t‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='7')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\n");
+		if(stars_num[i]=='8')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		if(stars_num[i]=='9')
+			printf("\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†      ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\t        ‚ñ†\n\t        ‚ñ†\n\t‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†\n\n");
+		sleep(1);
 		system("cls");
 	}
-	if(a==2||b==2){
-		printf("Æ•≥ﬂ¿Ú±o•ø±m, ±z¿Ú±o%d§∏\n",bet*25*30);
-	}
-	else
-		printf("±z¿Ú±o0§∏\n",bet);	
-		
+	(a==2||b==2)?printf("ÊÅ≠ÂñúÁç≤ÂæóÊ≠£ÂΩ©, ÊÇ®Áç≤Âæó%dÂÖÉ\n",bet*25*30):printf("ÊÇ®Áç≤Âæó0ÂÖÉ\n",bet);	
 }
-	
