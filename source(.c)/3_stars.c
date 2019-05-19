@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<time.h>
+#include<windows.h>
 #define N 4
 void best(void);/* 正彩 */
 void worse(void);/* 組彩 */
@@ -36,7 +37,6 @@ void stars(void)
 	printf("\t■■■■■\n\t■     \n\t■     \n\t■■■■■\n\t        ■\n\t        ■\n\t■■■■■\n");
 	sleep(1);
 	system("cls");
-	printf("%c%c%c%c\n",stars_num[0],stars_num[1],stars_num[2],stars_num[3]);
 	puts("歡迎游完三星彩, 請選擇您要玩的模式");
 	puts("1. 正彩");
 	puts("2. 組彩");
@@ -62,6 +62,7 @@ void stars(void)
 }
 void best(void)
 {
+	SetConsoleTitle("S Stars- 正彩");
 	fflush(stdin);
 	puts("選個三位數: ");
 	printf("1.電腦選號\n2.玩家選號\n> ");
@@ -93,6 +94,7 @@ void best(void)
 					b++;
 		}
 	}
+	SetConsoleTitle("S Stars- 正彩 ~ 開獎中...");
 	system("cls");
 	printf("開獎中...\n");
 	sleep(2);
@@ -121,11 +123,13 @@ void best(void)
 		sleep(1);
 		system("cls");
 	}
+	SetConsoleTitle("Result");
 	(a==3)?printf("恭喜獲得正彩, 您獲得%d元\n",bet*25*500):printf("您獲得0元\n",bet);	
 }
 
 void worse(void)
 {
+	SetConsoleTitle("S Stars- 組彩");
 	puts("選個三位數: ");
 	fflush(stdin);
 	printf("1.電腦選號\n2.玩家選號\n> ");
@@ -156,6 +160,7 @@ void worse(void)
 					b++;
 		}
 	}
+	SetConsoleTitle("S Stars- 組彩 ~ 開獎中...");
 	system("cls");
 	printf("開獎中...\n");
 	sleep(2);
@@ -184,10 +189,12 @@ void worse(void)
 		sleep(1);
 		system("cls");
 	}
-	(a==3||b==3||b==2||b==1||a==2||a==1)?printf("恭喜獲得正彩, 您獲得%d元\n",bet*25*80):printf("恭喜獲得正彩, 您獲得%d元\n",0);
+	SetConsoleTitle("Result");
+	(a==3||b==3)?printf("恭喜獲得組彩, 您獲得%d元\n",bet*25*80):printf("恭喜獲得正彩, 您獲得%d元\n",0);
 }
 void worst(void)
 {
+	SetConsoleTitle("S Stars- 對彩");
 	puts("選個三位數: ");
 	fflush(stdin);
 	printf("1.電腦選號\n2.玩家選號\n> ");
@@ -215,6 +222,7 @@ void worst(void)
 		if(stars_num[j]==player_num[j])
 			b++;
 	system("cls");
+	SetConsoleTitle("S Stars- 對彩 ~ 開獎中...");
 	printf("開獎中...\n");
 	sleep(2);
 	system("cls");
@@ -242,5 +250,6 @@ void worst(void)
 		sleep(1);
 		system("cls");
 	}
-	(a==2||b==2)?printf("恭喜獲得正彩, 您獲得%d元\n",bet*25*30):printf("您獲得0元\n",bet);	
+	SetConsoleTitle("Result");
+	(a==2||b==2)?printf("恭喜獲得對彩, 您獲得%d元\n",bet*25*30):printf("您獲得0元\n",bet);	
 }
