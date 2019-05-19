@@ -4,12 +4,11 @@
 void best(void);/* 正彩 */
 void worse(void);/* 組彩 */
 void worst(void);/* 對彩 */
-char stars_num[N];
-char player_num[N];	
+char stars_num[N];/* 正確號碼 */
+char player_num[N];	/* 玩家號碼 */
 int i,j,a=0,b=0,choice,random;
 void stars(void)
 {
-	srand(time(NULL));
 	system("cls");
 	for(i=0;i<N-1;i++){
 		stars_num[i]=rand()%10+48; // generate ASCII code 0~9
@@ -19,6 +18,24 @@ void stars(void)
 			}
 		}
 	}
+	printf("\t■■■■■\n\t        ■\n\t        ■\n\t■■■■■\n\t        ■\n\t        ■\n\t■■■■■\n\n");
+	sleep(1);
+	system("cls");
+	printf("\t■■■■■\n\t■     \n\t■     \n\t■■■■■\n\t        ■\n\t        ■\n\t■■■■■\n");
+	sleep(1);
+	system("cls");
+	printf("\t■■■■■■■\n\t      ■    \n\t      ■    \n\t      ■    \n\t      ■    \n\t      ■    \n\t      ■    \n");
+	sleep(1);
+	system("cls");
+	printf("\t     ■\n\t   ■  ■\n\t  ■    ■\n\t ■      ■\n\t■        ■\n\t■■■■■■\n\t■        ■\n\t■        ■\n\t■        ■\n");
+	sleep(1);
+	system("cls");
+	printf("\t■■■■■\n\t■       ■\n\t■       ■\n\t■■■■■\n\t■■■\n\t■  ■■\n\t■   ■■\n\t■      ■■\n\t■        ■■\n");
+	sleep(1);
+	system("cls");
+	printf("\t■■■■■\n\t■     \n\t■     \n\t■■■■■\n\t        ■\n\t        ■\n\t■■■■■\n");
+	sleep(1);
+	system("cls");
 	printf("%c%c%c%c\n",stars_num[0],stars_num[1],stars_num[2],stars_num[3]);
 	puts("歡迎游完三星彩, 請選擇您要玩的模式");
 	puts("1. 正彩");
@@ -30,7 +47,6 @@ void stars(void)
 	switch(op)
 	{
 		case 1:
-			
 			best();
 			break;
 		case 2:
@@ -130,11 +146,8 @@ void worse(void)
 	int bet;
 	printf("您下注數目(每注25元): ");
 	scanf("%d",&bet);
-	int i,j;
-	int a=0,b=0,three=0;
+	a=0,b=0;
 	for(i=0;i<N-1;i++){
-		if(stars_num[i]==stars_num[i-1])
-			three++;
 		if(stars_num[i]==player_num[i])
 			a++;
 		else{
@@ -171,8 +184,7 @@ void worse(void)
 		sleep(1);
 		system("cls");
 	}
-	printf("恭喜獲得正彩, 您獲得%d元\n",bet*25*80);
-	/* 這邊需修改 */
+	(a==3||b==3||b==2||b==1||a==2||a==1)?printf("恭喜獲得正彩, 您獲得%d元\n",bet*25*80):printf("恭喜獲得正彩, 您獲得%d元\n",0);
 }
 void worst(void)
 {
