@@ -8,5 +8,6 @@ This Is The First Small Project Which I Wrote In Freshman With My Partner.
 ![擷取_2019_05_25_11_57_45_598](https://user-images.githubusercontent.com/48882710/58364272-5aa64480-7ee4-11e9-9a71-99c8ae1626fa.png)
 
 # Motivation
-
+We have seen lots of lottery store in Taipei, Taiwan. Hence, my teammates and I start to make this project, so we can play it.
 # Objective
+After we creating this project, 
