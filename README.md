@@ -11,4 +11,3 @@ This Is The First Small Project Which I Wrote In Freshman With My Partner.
 # Motivation
 We have seen lots of lottery store in Taipei, Taiwan. Hence, my teammates and I start to make this project, so we can play it.
 # Objective
-After we creating this project, 
