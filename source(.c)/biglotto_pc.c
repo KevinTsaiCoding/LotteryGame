@@ -16,12 +16,12 @@ void biglotto_pc()
 	srand(time(NULL));
 	system("Mode con cols=110 lines=110");
 	SetConsoleTitle("BigLotto- PC");
-	printf("Åwªï¹Cª±¤j¼Ö³z¹q¸£¿ï¸¹½g\n\n",50);
-	printf("½Ð°Ý­n¶R´Xª` ¨Cª`50¤¸\n");
+	printf("æ­¡è¿ŽéŠçŽ©å¤§æ¨‚é€é›»è…¦é¸è™Ÿç¯‡\n\n",50);
+	printf("è«‹å•è¦è²·å¹¾æ³¨ æ¯æ³¨50å…ƒ\n");
 	printf("> ");
 	scanf("%d",&bet);
 	printf("\n");
-	for(i=0;i<7;i++){//¤¤¼ú½X 
+	for(i=0;i<7;i++){//ä¸­çŽç¢¼ 
 		do{
 			num[i]=rand()%49+1;
 			for(j=0;j<i;j++){
@@ -31,7 +31,7 @@ void biglotto_pc()
 			}
 		}while(num[i]==0);
 	}
-	for(i=0;i<6;i++){//±Æ§Ç¤¤¼ú½X 
+	for(i=0;i<6;i++){//æŽ’åºä¸­çŽç¢¼ 
 		for(j=0;j<6;j++){
 			if(num[i]<num[j]){
 				temp=num[j];
@@ -40,16 +40,16 @@ void biglotto_pc()
 				}
 			}
 	}
-	printf("¤¤¼ú¸¹½X :");
+	printf("ä¸­çŽè™Ÿç¢¼ :");
 	for(i=0;i<7;i++){
 		if(i==6){
-			printf(" ¯S§O¸¹ :");
+			printf(" ç‰¹åˆ¥è™Ÿ :");
 		}
 		printf("%3d ",num[i]);
-	}//¤¤¼ú½X 
+	}//ä¸­çŽç¢¼ 
 	puts("\n");
-	for(x=0;x<bet;x++){//¹q¸£½X 
-		for(i=0;i<6;i++){//¹q¸£½X 
+	for(x=0;x<bet;x++){//é›»è…¦ç¢¼ 
+		for(i=0;i<6;i++){//é›»è…¦ç¢¼ 
 			do{
 				random[i]=rand()%49+1;
 				for(j=0;j<i;j++){
@@ -59,7 +59,7 @@ void biglotto_pc()
 				}
 			}while(random[i]==0);
 		}
-		for(i=0;i<6;i++){//±Æ§Ç¹q¸£½X 
+		for(i=0;i<6;i++){//æŽ’åºé›»è…¦ç¢¼ 
 			for(j=0;j<6;j++){
 				if(random[i]<random[j]){
 					temp=random[j];
@@ -68,55 +68,55 @@ void biglotto_pc()
 				}
 			}
 		}
-		printf("±zªº¸¹½X :");
+		printf("æ‚¨çš„è™Ÿç¢¼ :");
 		for(i=0;i<6;i++){
 			printf("%3d",random[i]);
 		}
 		printf("\n");
 		v=0;
 		n=0;
-		for(r=0;r<6;r++){//¤ñ¹ï 
+		for(r=0;r<6;r++){//æ¯”å° 
 			for(t=0;t<6;t++){
 				if(num[r]==random[t]){
 					v++;
 				}
 			}
 		}
-		for(r=0;r<6;r++){//¤ñ¹ï 
+		for(r=0;r<6;r++){//æ¯”å° 
 			if(num[r]==random[7]){
 				n++;
 			}
 		}
 		if(v==3&&n==0)
-			printf("®¥³ß±z¤¤¤F´¶¼ú¡I\nNTD $400\n\n");
+			printf("æ­å–œæ‚¨ä¸­äº†æ™®çŽï¼\nNTD $400\n\n");
 		else if(v==2&&n==1)
-			printf("®¥³ß±z¤¤¤F¬m¼ú¡I\nNTD $400\n\n");
+			printf("æ­å–œæ‚¨ä¸­äº†æŸ’çŽï¼\nNTD $400\n\n");
 		else if(v==4&&n==0)
-			printf("®¥³ß±z¤¤¤F¥î¼ú¡I\nNTD $2000\n\n");
+			printf("æ­å–œæ‚¨ä¸­äº†ä¼çŽï¼\nNTD $2000\n\n");
 		else if(v==3&n==1)
-			printf("®¥³ß±z¤¤¤F³°¼ú¡I\nNTD $1000\n\n");
+			printf("æ­å–œæ‚¨ä¸­äº†é™¸çŽï¼\nNTD $1000\n\n");
 		else if(v==5&n==0){
-			printf("®¥³ß±z¤¤¤F°Ñ¼ú¡I\n");
+			printf("æ­å–œæ‚¨ä¸­äº†åƒçŽï¼\n");
 			printf("NTD $%.0f\n\n",bet*50*0.07);
 		}
 			
 		else if(v==4&&n==1){
-			printf("®¥³ß±z¤¤¤F¸v¼ú¡I\n");
+			printf("æ­å–œæ‚¨ä¸­äº†è‚†çŽï¼\n");
 			printf("NTD $%.0f\n\n",bet*50*0.045);
 		}
 			
 		else if(v==6&&n==0){
-			printf("®¥³ß±z¤¤¤FÀY¼ú¡I\n");
+			printf("æ­å–œæ‚¨ä¸­äº†é ­çŽï¼\n");
 			printf("NTD $%.0f\n\n",bet*50*0.82);
 		}
 			
 		else if(v==5&&n==1){
-			printf("®¥³ß±z¤¤¤F¶L¼ú¡I\nNT$\n\n");
+			printf("æ­å–œæ‚¨ä¸­äº†è²³çŽï¼\nNT$\n\n");
 			printf("NTD $%.0f\n\n",bet*50*0.065);
 		}
 				
 		else
-			printf("¤£¦n·N«ä ±z¨S¤¤¼ú¡I\n\n");
+			printf("ä¸å¥½æ„æ€ æ‚¨æ²’ä¸­çŽï¼\n\n");
 		puts("");
 	}
 }
