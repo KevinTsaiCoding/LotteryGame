@@ -10,32 +10,32 @@ void biglotto_player(){
 	system("Mode con cols=60 lines=60");
 	system("color f1");
 	int i, j, t, temp;
-	int num[7];// 6­Ó¤@¯ë¸¹½X©M¤@­Ó¯S§O¸¹
+	int num[7];// 6å€‹ä¸€èˆ¬è™Ÿç¢¼å’Œä¸€å€‹ç‰¹åˆ¥è™Ÿ
 	srand(time(NULL));
-	int Optional_num[5][6];//¨Ï¥ÎªÌ¿é¤J ¦Û¿ï¸¹ 
-	int same[5];//¬Û¦Pªº ¤¤¼ú¼Æ¦r ¦¸¼Æ 
-	int spe_same[5];//¤¤¯S§O¸¹
-	int money=100000;//¼ú¦À
-	int bets;//§ëª`¦¸¼Æ 
+	int Optional_num[5][6];//ä½¿ç”¨è€…è¼¸å…¥ è‡ªé¸è™Ÿ 
+	int same[5];//ç›¸åŒçš„ ä¸­çæ•¸å­— æ¬¡æ•¸ 
+	int spe_same[5];//ä¸­ç‰¹åˆ¥è™Ÿ
+	int money=100000;//çæ± 
+	int bets;//æŠ•æ³¨æ¬¡æ•¸ 
 	
 	 
 	
-	SlowPrint("¿é ¤J §ë ª` ¦¸ ¼Æ ( ³Ì ¦h ¤­ ¦¸ ) : ", 50);	
+	SlowPrint("è¼¸ å…¥ æŠ• æ³¨ æ¬¡ æ•¸ ( æœ€ å¤š äº” æ¬¡ ) : ", 50);	
 	scanf("%d",&bets); 
-	
+		
 	system("cls");
-	
+	SlowPrint("è¼¸ å…¥ æŠ• æ³¨ è™Ÿ ç¢¼(è™Ÿç¢¼é™åˆ¶: 1-49) : ", 50);
 	for(t=0;t<bets;t++){
-		SlowPrint("\n²Ä ", 50);
+		SlowPrint("\nç¬¬ ", 50);
 		printf("%d",t+1);
 		Sleep(50);
-		SlowPrint(" ²Õ ¦Û ¿ï ¸¹ : ", 50);
+		SlowPrint(" çµ„ è‡ª é¸ è™Ÿ : ", 50);
 		for(i=0;i<6; i++){
 			scanf("%d",&temp);
 			for(j=0; j<i; j++){
 				if(temp == Optional_num[t][j]){
 					i--;
-					SlowPrint("\n¦¹ ¸¹ ½X ¤w ¿ï ¹L ¡C", 50);
+					SlowPrint("\næ­¤ è™Ÿ ç¢¼ å·² é¸ é ã€‚", 50);
 					break;
 				}
 			}
@@ -56,13 +56,13 @@ void biglotto_player(){
 			num[i] = temp;
 	}
 	
-	SlowPrint("\n\n¤@ ¯ë ¸¹ ½X : ", 50);
+	SlowPrint("\n\nä¸€ èˆ¬ è™Ÿ ç¢¼ : ", 50);
 	for(i=0; i<6; i++){
 		printf("%d  ", num[i]);	
 		Sleep(1000);
 	}
 	
-	SlowPrint("\n\n¯S §O ¸¹ : ", 50);
+	SlowPrint("\n\nç‰¹ åˆ¥ è™Ÿ : ", 50);
 	Sleep(1000);	
 	printf("%d\n\n", num[i]);
 	Sleep(1000);
@@ -83,58 +83,61 @@ void biglotto_player(){
 	
 	for(t=0;t<bets;t++){
 		if(same[t] == 3 && spe_same[t] == 0){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ´¶¼ú NT $300", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   æ™®ç NT $300", 50);
     		printf("\n");
     		Sleep(2000);
     	}
 		else if(same[t] == 2 && spe_same[t] == 1){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ¬m¼ú NT $400", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   æŸ’ç NT $400", 50);
     		printf("\n");
     		Sleep(2000);
     	}
 		else if(same[t] == 3 && spe_same[t] == 1){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ³°¼ú NT $1,000", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   é™¸ç NT $1,000", 50);
     		printf("\n");
     		Sleep(2000);
     	}
 		else if(same[t] == 4 && spe_same[t] == 0){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ¥î¼ú NT $2,000", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   ä¼ç NT $2,000", 50);
     		printf("\n");
     		Sleep(2000);
     	}
 		else if(same[t] == 4 && spe_same[t] == 1){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ¸v¼ú NT $", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   è‚†ç NT $", 50);
     		printf("%.0f",money*0.045);
     		printf("\n");
     		Sleep(2000);
     	} 
 		else if(same[t] == 5 && spe_same[t] == 0){ 
-			SlowPrint("\n®¥³ß±z ! ! !   °Ñ¼ú NT $", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   åƒç NT $", 50);
     		printf("%.0f",money*0.07);
     		printf("\n");
     		Sleep(2000);
     	} 
 		else if(same[t] == 5 && spe_same[t] == 1){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ¶L¼ú NT $", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   è²³ç NT $", 50);
     		printf("%.0f",money*0.065);
     		printf("\n");
     		Sleep(2000);
     	}
 		else if(same[t] == 6 && spe_same[t] == 0){ 
-			SlowPrint("\n®¥³ß±z ! ! !   ÀY¼ú NT $", 50);
+			SlowPrint("\næ­å–œæ‚¨ ! ! !   é ­ç NT $", 50);
     		printf("%.0f",money*0.82);
     		printf("\n");
     		Sleep(2000);
 		}
 		else{
-			SlowPrint("\n²Ä ", 50);
+			SlowPrint("\nç¬¬ ", 50);
 			printf("%d",t+1);
 			Sleep(50);
-			SlowPrint(" ²Õ ¸¹ ½X ¨S ¤¤ ¼ú Q A Q¡C\n", 50);
+			SlowPrint(" çµ„ è™Ÿ ç¢¼ æ²’ ä¸­ ç Q A Qã€‚\n", 50);
     		printf("\n");
     		Sleep(2000);
 		}
 	}
+	system("pause");
+	system("cls");
+	printf("è¿”å›ç›®éŒ„ä¸­...\n");
 }
 void SlowPrint(char* string,int sleeptime){
     int i = 0;
