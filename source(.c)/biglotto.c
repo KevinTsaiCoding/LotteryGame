@@ -4,15 +4,17 @@
 #include<dos.h>
 #include"biglotto_player.h"
 #include"biglotto_pc.h"
+#include"reference.h"
 void biglotto(void)
 {
 	again:
+	lo:
 	SetConsoleTitle("BigLotto");
 	system("color 07");
 	system("cls");
-	printf("\t¤j¼Ö³z  ¨Cª`50¤¸\n", 50);
+	printf("\tå¤§æ¨‚é€  æ¯æ³¨50å…ƒ\n", 50);
 	puts("");
-	printf("1. ¦Û¿ï¸¹½X\n\n2. ¹q¸£¿ï¸¹\n",50);
+	printf("1. è‡ªé¸è™Ÿç¢¼\n\n2. é›»è…¦é¸è™Ÿ\n\n3. çŽ©æ³•èªªæ˜Ž\n",50);
 	char op;
 	printf("> ");
 	scanf("%c",&op);
@@ -25,17 +27,22 @@ void biglotto(void)
 		case '2':
 			biglotto_pc();
 			break;
+		case '3':
+			reference();
+			system("Mode con cols=50 lines=20");
+			goto lo;
+			break;
 		default:
 			system("cls");
 			SetConsoleTitle("Error 404");
 			system("color 02");
-			printf("\t¡½      ¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½¡½¡½¡½¡½\n\t        ¡½\n\t        ¡½\n\t        ¡½\n\t        ¡½\n\n");
+			printf("\tâ–       â– \n\tâ–       â– \n\tâ–       â– \n\tâ– â– â– â– â– \n\t        â– \n\t        â– \n\t        â– \n\t        â– \n\n");
 			sleep(1);
 			system("cls");
-			printf("\t¡½¡½¡½¡½¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½¡½¡½¡½¡½\n\n\n");
+			printf("\tâ– â– â– â– â– \n\tâ–       â– \n\tâ–       â– \n\tâ–       â– \n\tâ–       â– \n\tâ–       â– \n\tâ– â– â– â– â– \n\n\n");
 			sleep(1);
 			system("cls");
-			printf("\t¡½      ¡½\n\t¡½      ¡½\n\t¡½      ¡½\n\t¡½¡½¡½¡½¡½\n\t        ¡½\n\t        ¡½\n\t        ¡½\n\t        ¡½\n\n");
+			printf("\tâ–       â– \n\tâ–       â– \n\tâ–       â– \n\tâ– â– â– â– â– \n\t        â– \n\t        â– \n\t        â– \n\t        â– \n\n");
 			sleep(1);
 			system("cls");
 			goto again;
