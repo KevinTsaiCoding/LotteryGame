@@ -9,7 +9,7 @@ The first small project hich I wrote in freshman with my partner.
 
                                                                                   Caption: flowchart
 # Motivation
-We have seen lots of lottery store in Taipei, Taiwan. Hence, my teammates and I start to make this project, so we can play it.
+We have seen lots of lottery store in Taipei, Taiwan. Hence, my teammates and I started to make this project, so we can play it.
 # Objective
 
 # Environment
